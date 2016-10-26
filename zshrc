@@ -121,6 +121,10 @@ alias allupdate="sudo apt-get update && sudo apt-fast upgrade -y && sudo apt-fas
 function_sp () {
     curl -F "sprunge=@${1:--}" http://sprunge.us
 }
+function_ytdl () {
+	youtube-dl --external-downloader aria2c --external-downloader-args -x10 $1 && notify-send -t 3 "youtube-dl: Done" || notify-send -t 3 "youtube-dl: Error"
+}
+alias ytdl=function_ytdl
 alias spaste=function_sp
 alias techfreak="ssh -p 443 mbtamuli@www.techfreak.ga"
 alias bshell="ssh -p 443 mbtamuli12@ssh.blinkenshell.org"
