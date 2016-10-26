@@ -123,6 +123,10 @@ function_sp () {
 }
 alias spaste=function_sp
 alias techfreak="ssh -p 443 mbtamuli@www.techfreak.ga"
+function_sp () {
+    curl -F "sprunge=@${1:--}" http://sprunge.us
+}
+alias spaste=function_sp
 alias bshell="ssh -p 443 mbtamuli12@ssh.blinkenshell.org"
 alias afi="sudo apt-fast -y install"
 alias ppa="sudo add-apt-repository -y"
